@@ -102,56 +102,317 @@
 
 // object orientad programming
 
-class Person {
-    name: string;
-    // private type: string;
-    // protected age: number;
+// class Person {
+//     name: string;
+//     // private type: string;
+//     // protected age: number;
+//
+//     constructor(name: string, public userName: string){
+//         this.name = name;
+//     }
+//
+//     info(){
+//         return this.name + this.userName;
+//     }
+// }
+//
+//
+// let person = new Person('shalil', 'shakilnsu2018');
+// console.log(person);
+//
+// class Shakil extends Person{
+//     constructor(userName: string){
+//         super("Sh", userName)
+//     }
+//
+// }
+//
+// let newInharit = new Shakil("got to s");
+// console.log(newInharit);
+//
+// class Plants {
+//     private _spacis: string = "Default";
+//     get spacis(): string {
+//         return this._spacis;
+//     }
+//
+//     set spacis(value: string) {
+//         if (value.length >= 3){
+//             this._spacis = value;
+//         }else {
+//             this._spacis = "Default";
+//         }
+//
+//     }
+//
+//
+// }
+//
+// let plants = new Plants();
+// console.log(plants.spacis);
+// plants.spacis = "da";
+// console.log(plants.spacis);
+//
+// plants.spacis = "dadssda";
+// console.log(plants.spacis);
 
-    constructor(name: string, public userName: string){
-        this.name = name;
-    }
+// Static mathod
 
-    info(){
-        return this.name + this.userName;
-    }
-}
+// class Helper {
+//     static PI = 3.14;
+//     static cercumfarance(value: number): number {
+//         return this.PI * value;
+//     }
+//
+// }
+//
+// console.log(Helper.PI);
+// console.log(Helper.cercumfarance(32));
 
+//abstract class
 
-let person = new Person('shalil', 'shakilnsu2018');
-console.log(person);
-
-class Shakil extends Person{
-    constructor(userName: string){
-        super("Sh", userName)
-    }
-
-}
-
-let newInharit = new Shakil("got to s");
-console.log(newInharit);
-
-class Plants {
-    private _spacis: string = "Default";
-    get spacis(): string {
-        return this._spacis;
-    }
-
-    set spacis(value: string) {
-        if (value.length >= 3){
-            this._spacis = value;
-        }else {
-            this._spacis = "Default";
-        }
-
-    }
+// abstract class Project {
+//     name: string = "Default";
+//     budget: number = 1000;
+//     abstract changeName(name: string): void;
+//
+//     calcBudget(){
+//         return this.budget;
+//     }
+// }
+//
+// class ItPro extends Project{
+//     changeName(name: string): void {
+//         this.name = name;
+//     }
+// }
+//
+// let newp = new ItPro();
+// console.log(newp);
+// newp.changeName("not Default");
+// console.log(newp);
 
 
-}
+// tsc app.ts --outFile app.js todo: console cmd
 
-let plants = new Plants();
-console.log(plants.spacis);
-plants.spacis = "da";
-console.log(plants.spacis);
+// ///<reference path="CircleCurcomf.ts"/>
+// ///<reference path="rectangleArea.ts"/>
+//
+// console.log(MyMath.calculateCurcomfarance(32));
+// console.log(MyMath.caluculateRect(32, 32));
 
-plants.spacis = "dadssda";
-console.log(plants.spacis);
+//
+// interfate
+//
+
+// interface NamedPerson {
+//     firstName: string;
+//     age?: number; // with the question mark the age is now optional
+//     [porpName: string] : any;
+//     greating(lastname: string): void;
+// }
+//
+//
+// function nameed(Person: NamedPerson) {
+//     return Person.firstName;
+// }
+//
+// function changeName(Person: NamedPerson) {
+//     Person.firstName = "ok nul";
+// }
+//
+// const Person: NamedPerson = {
+//     firstName: "shkil",
+//     age: 23,
+//     propName: ["go adsa", "dskdfla"],
+//     greating(lastname: string): void {
+//         console.log(`first ${this.firstName} and last name ${lastname}`);
+//     }
+// };
+//
+// // console.log(nameed({firstName: "shakil", age: 23}));
+// changeName(Person);
+// console.log(nameed(Person));
+// Person.greating("hossain")
+//
+//
+// class myPerosn implements NamedPerson{
+//     age: number;
+//     firstName: string;
+//     lastName: string;
+//
+//     greating(lastname: string): void {
+//         console.log(`hello this is from class first ${this.firstName} and last name ${lastname}`);
+//     }
+//
+// }
+//
+// let person = new myPerosn();
+// person.firstName = "class";
+// person.lastName = "anything";
+// person.greating(person.lastName);
+
+// funtion type inhatance
+
+// interface Type {
+//     (number1: number, number2: number): number;
+// }
+//
+// let doublefuc: Type;
+//
+// doublefuc = function(number1: number, number2: number){
+//   return (number1+number2)*2;
+// };
+//
+// console.log(doublefuc(3,3));
+
+//
+// todo: Generic type
+//
+
+// sample generic type
+//
+// function sample(value: any) {
+//     return value;
+// }
+//
+// console.log(sample("jfldakf").length);
+// // console.log(sample(23).length); undefine
+// console.log(sample(23));
+// console.log(sample({name:"jfldakf", age: 32 }));
+//
+// // sample better type
+//
+// function better<T>(value: T) {
+//     return value;
+// }
+// console.log(better("jfldakf").length);
+// // console.log(better(23).length); undefine
+// console.log(better(23));
+// console.log(better({name:"jfldakf", age: 32 }));
+//
+// // builtin type
+//
+// const butilt: Array<number>= [32, 32];
+// butilt.push(-32);
+// console.log(butilt);
+//
+// // Array
+//
+// function printAll<T>(args: T[]) {
+//     args.forEach(el => console.log(el));
+// }
+//
+// printAll<string>(["dsd", "dsd"]);
+
+// class MyMap<T> {
+//     private map: {[key: string]: T} = {};
+//
+//     setItem(key: string, item: T){
+//         this.map[key] = item;
+//     }
+//
+//     getItem(key:string){
+//         return this.map[key];
+//     }
+//
+//     clear(){
+//         this.map = {}
+//     }
+//
+//     print(){
+//         for (let key in this.map){
+//             console.log(key, this.map[key]);
+//         }
+//     }
+// }
+//
+// const Mymap = new MyMap<number>();
+// Mymap.setItem("app", 1);
+// Mymap.setItem("afdaspp", 2);
+// Mymap.setItem("appfadfafvg", 3);
+// console.log(Mymap.getItem("app"))
+// Mymap.print();
+
+/*
+//Decorator
+*/
+
+// function loged(constructorFnc: Function) {
+//     console.log(constructorFnc);
+// }
+//
+// @loged
+// class Decorator {
+//     constructor(){
+//         console.log("hi");
+//     }
+// }
+//
+// function logging(value: boolean) {
+//     return value ? loged : null;
+// }
+// @logging(true)
+// class Car {
+//
+// }
+
+// Advanced
+
+// function printable(constructorFn: Function) {
+//     constructorFn.prototype.print = function () {
+//         console.log(this);
+//     }
+// }
+//
+// @printable
+// class Car {
+//     name = "shakil"
+// }
+//
+// let obj = new Car();
+// (<any>obj).print();
+
+// method decorator
+//
+// function access(value: boolean) {
+//     return function (tergat: any, propName: string, directior: PropertyDescriptor) {
+//         directior.writable = value;
+//     }
+//
+// }
+//
+// class Project {
+//     projectName: string;
+//     constructor(Name: string){
+//         this.projectName = Name;
+//     }
+//     @access(false)
+//     calcBudget(){
+//         console.log(1000);
+//     }
+// }
+//
+//
+// const pro = new Project("IT");
+//
+// pro.calcBudget();
+// //
+// // pro.calcBudget = function () {
+// //     console.log(2000);
+// // };
+//
+// pro.calcBudget();
+//
+// console.log("working");
+
+
+// thirdParty Library
+
+// import 'js';
+//
+//
+
+$("#app").css({'background-color': 'blue'});
+console.log("working");
+

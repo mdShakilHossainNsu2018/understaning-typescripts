@@ -6,7 +6,12 @@
 
 </head>
 <body>
-
-<script src="app.js"></script>
+<div id="app">Changes with jquery</div>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/systemjs/dist/system.js"></script>
+<script>
+    // System.map({"js": "node_modules/jquery/dist/jquery.min.js"});
+    System.import('/app.js');
+</script>
 </body>
 </html>
