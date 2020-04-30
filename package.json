@@ -15,7 +15,7 @@
     "lite-server": "^2.5.3"
   },
   "dependencies": {
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "systemjs": "^5.0.0"
   }
 }
